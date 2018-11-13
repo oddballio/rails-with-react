@@ -14,18 +14,20 @@ class Posts extends React.Component {
       })
   }
 
-  allPosts = () => (
-    this.state.posts.map(post => (
-      <li key={post}>{post}</li>
-    ))
-  )
+  renderAllPosts = () => {
+    return(
+      <ul>
+        {this.state.posts.map(post => (
+          <li key={post}>{post}</li>
+        ))}
+      </ul>
+    )
+  }
 
   render() {
     return (
       <div>
-        <ul>
-          {this.allPosts()}
-        </ul>
+        {this.renderAllPosts()}
       </div>
     )
   }
