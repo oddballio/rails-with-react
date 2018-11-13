@@ -2,12 +2,14 @@ import React from 'react'
 import axios from 'axios'
 import { passCsrfToken } from '../util/helpers'
 
-passCsrfToken(document, axios)
-
 class NewPost extends React.Component {
   state = {
     title: '',
     body: ''
+  }
+
+  componentDidMount() {
+    passCsrfToken(document, axios)
   }
 
   handleChange = event => {
